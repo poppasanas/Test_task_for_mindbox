@@ -1,0 +1,10 @@
+SELECT ProductName, ProductCategory
+FROM Products
+ORDER BY ProductName
+
+//Таблица одна с повторениями имен и категорий.
+//По типу:
+//Apple Categ1
+//Apple Categ2
+//Orange Categ1
+//Pear NULL
