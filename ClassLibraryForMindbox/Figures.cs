@@ -47,6 +47,20 @@ namespace ClassLibraryForMindbox
 			Console.WriteLine("Площадь вашей фигуры равна: " + area);
 			return;
 		}
+		public void IsTriangle90Degree(double[] lengths)
+		{
+			if (lengths[0] > lengths[1] && lengths[0] > lengths[2])
+				if (Math.Pow(lengths[0], 2) == (Math.Pow(lengths[1], 2) + Math.Pow(lengths[2], 2)))
+					Console.WriteLine("Ваш треугольник - прямой");
+				else Console.WriteLine("Ваш треугольник - не прямой");
+			else if (lengths[1] > lengths[2])
+				if (Math.Pow(lengths[1], 2) == (Math.Pow(lengths[0], 2) + Math.Pow(lengths[2], 2)))
+					Console.WriteLine("Ваш треугольник - прямой");
+				else Console.WriteLine("Ваш треугольник - не прямой");
+			else if (Math.Pow(lengths[2], 2) == (Math.Pow(lengths[1], 2) + Math.Pow(lengths[0], 2)))
+					Console.WriteLine("Ваш треугольник - прямой");
+				else Console.WriteLine("Ваш треугольник - не прямой");
+		}
 		public void AllFigure()
 		{
 			double area;
@@ -64,6 +78,7 @@ namespace ClassLibraryForMindbox
 					break;
 				case 3:
 					area = AreaOfTriangle(AllLengths);
+					IsTriangle90Degree(AllLengths);
 					ReturnArea(area);
 					break;
 				case -1:
@@ -73,7 +88,7 @@ namespace ClassLibraryForMindbox
 					ReturnArea(area);
 					goto case -1;
 			}
-			System.Threading.Thread.Sleep(2000);
+			System.Threading.Thread.Sleep(5000);
 		}
 	}
 }
